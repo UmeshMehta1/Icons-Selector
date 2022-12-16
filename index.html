@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="forAll">
+      <div class="select">
+        <div id="selectField">
+          <p id="selectText">Select Social Media</p>
+          <img src="logo/arrow.png" id="arrowIcon" />
+        </div>
+
+        <ul id="list" class="hide">
+          <li class="options">
+            <img src="logo/youtube.png" />
+            <p>YouTube</p>
+          </li>
+          <li class="options">
+            <img src="logo/fb.png" />
+            <p>Facebook</p>
+          </li>
+          <li class="options">
+            <img src="logo/insta.png" />
+            <p>Instagram</p>
+          </li>
+          <li class="options">
+            <img src="logo/twitter.png" />
+            <p>Twitter</p>
+          </li>
+          <li class="options">
+            <img src="logo/linkdin.png" />
+            <p>Linkdin</p>
+          </li>
+          <li class="options">
+            <img src="logo/telegram.png" />
+            <p>Telegram</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      let selectField = document.getElementById('selectField');
+      let selectText = document.getElementById('selectText');
+      let options = document.getElementsByClassName('options');
+      let list = document.getElementById('list');
+      let arrowIcon = document.getElementById('arrowIcon');
+
+      selectField.onclick = function () {
+        list.classList.toggle('hide');
+        arrowIcon.classList.toggle('rotate');
+      };
+
+      for (options of options) {
+        options.onclick = function () {
+          selectText.innerHTML = this.textContent;
+          list.classList.toggle('hide');
+          arrowIcon.classList.toggle('rotate');
+        };
+      }
+    </script>
+  </body>
+</html>
